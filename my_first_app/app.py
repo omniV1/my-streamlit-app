@@ -12,10 +12,10 @@ import numpy as np
 
 # ===== PAGE CONFIGURATION =====
 st.set_page_config(
-    page_title="My First App",  # Browser tab title
-    page_icon="🎯",              # Browser tab icon
-    layout="wide",               # Use full width
-    initial_sidebar_state="expanded"  # Sidebar open by default
+    page_title="Owens First Streamlit Application",  # Browser tab title
+    page_icon="🎯",  # Browser tab icon
+    layout="wide",  # Use full width
+    initial_sidebar_state="expanded",  # Sidebar open by default
 )
 
 # ===== MAIN APP =====
@@ -45,16 +45,20 @@ if user_name:
 # Example: Create some sample data
 st.header("📊 Sample Data")
 
+
 # Generate random data
 @st.cache_data
 def generate_sample_data(n_rows=100):
     """Generate sample dataset."""
-    return pd.DataFrame({
-        'Date': pd.date_range(start='2024-01-01', periods=n_rows, freq='D'),
-        'Value A': np.random.randn(n_rows).cumsum(),
-        'Value B': np.random.randn(n_rows).cumsum(),
-        'Category': np.random.choice(['Cat 1', 'Cat 2', 'Cat 3'], n_rows)
-    })
+    return pd.DataFrame(
+        {
+            "Date": pd.date_range(start="2024-01-01", periods=n_rows, freq="D"),
+            "Value A": np.random.randn(n_rows).cumsum(),
+            "Value B": np.random.randn(n_rows).cumsum(),
+            "Category": np.random.choice(["Cat 1", "Cat 2", "Cat 3"], n_rows),
+        }
+    )
+
 
 # Create data
 df = generate_sample_data()
@@ -68,7 +72,7 @@ with tab1:
 
 with tab2:
     st.subheader("Line Chart")
-    st.line_chart(df.set_index('Date')[['Value A', 'Value B']])
+    st.line_chart(df.set_index("Date")[["Value A", "Value B"]])
 
 with tab3:
     st.subheader("Statistics")
