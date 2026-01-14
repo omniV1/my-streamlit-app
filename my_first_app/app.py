@@ -21,7 +21,7 @@ st.set_page_config(
 # ===== MAIN APP =====
 
 # Title and description
-st.title("🎯 Owen's first streamlit application")
+st.title(" Owen's first streamlit application")
 st.markdown("""
 Welcome to your first Streamlit app! This is a template to help you get started.
 Modify this file to build your own interactive web application.
